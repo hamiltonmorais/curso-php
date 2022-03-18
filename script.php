@@ -35,36 +35,30 @@ if (empty($nome)) {
   return;
 }
 
-
-if ($idade >= 6 && $idade <= 12) {
-  for ($i = 0; $i < count($categorias); $i++) {
+for ($i = 0; $i < count($categorias); $i++) {
+  if ($idade >= 6 && $idade <= 12) {
     if ($categorias[$i] == 'Infantil') {
       $_SESSION['mensagem-de-sucesso'] = 'O nadador ' . $nome . ' compete na categoria Infantil';
       header('location:index.php');
       return;
     }
-  }
-} else if ($idade > 12 && $idade < 18) {
-  for ($i = 0; $i < count($categorias); $i++) {
+  } else if ($idade > 12 && $idade < 18) {
     if ($categorias[$i] == 'Adolescente') {
       $_SESSION['mensagem-de-sucesso'] = 'O nadador ' . $nome . ' compete na categoria Adolescente';
       header('location:index.php');
       return;
     }
-  }
-} else if ($idade >= 18  && $idade < 60) {
-  for ($i = 0; $i < count($categorias); $i++) {
+  } else if ($idade >= 18  && $idade < 60) {
     if ($categorias[$i] == 'Adulto') {
       $_SESSION['mensagem-de-sucesso'] = 'O nadador ' . $nome . ' compete na categoria Adulto';
       header('location:index.php');
       return;
     }
-  }
-} else if ($idade >= 60) {
-  for ($i = 0; $i < count($categorias); $i++)
+  } else if ($idade >= 60) {
     if ($categorias[$i] == 'Idoso') {
       $_SESSION['mensagem-de-sucesso'] = 'O nadador ' . $nome . ' compete na categoria Idoso';;
       header('location:index.php');
       return;
     }
+  }
 }
